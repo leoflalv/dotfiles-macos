@@ -8,8 +8,8 @@ if not mason_lspconfig_status then
 	return
 end
 
-local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
-if not mason_null_ls_status then
+local mason_tools_status, mason_tools = pcall(require, "mason-tool-installer")
+if not mason_tools_status then
 	return
 end
 
@@ -22,20 +22,15 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"lua_ls",
-		"eslint",
-		"sqlls",
 	},
 })
 
-mason_null_ls.setup({
+mason_tools.setup({
 	ensure_installed = {
 		"prettier",
 		"stylua",
-		"gofmt",
-		"sqlfmt",
-		"dart_format",
+		"markdownlint",
 		"eslint_d",
-		"stylint",
 	},
 	automatic_installation = true,
 })

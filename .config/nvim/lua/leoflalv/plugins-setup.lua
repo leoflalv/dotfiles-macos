@@ -69,7 +69,7 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- snippet completions
 
 	-- managing lsp
-	use("williamboman/mason.nvim") -- simple to use language server installer
+	use({"williamboman/mason.nvim", requires = { { "WhoIsSethDaniel/mason-tool-installer.nvim" } } }) -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
 
 	-- lsp
@@ -83,8 +83,8 @@ return packer.startup(function(use)
 	use("dart-lang/dart-vim-plugin")
 
 	-- formatting & linting
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
+	use("stevearc/conform.nvim")
+	use("mfussenegger/nvim-lint")
 
 	-- treesitter configuration
 	use({
